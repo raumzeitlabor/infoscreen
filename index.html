@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Bootstrap, from Twitter</title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<!-- Le styles -->
+		<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+		<style type="text/css">
+			/* Override some defaults */
+			html, body {
+				background-color: #eee;
+			}
+			body {
+				padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
+			}
+			.container > footer p {
+				text-align: center; /* center align it with the container */
+			}
+			.container {
+				width: 1000px; 
+			}
+
+			/* The white background content wrapper */
+			.content {
+				background-color: #fff;
+				padding: 20px;
+				margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+				-webkit-border-radius: 6px;
+					 -moz-border-radius: 6px;
+								border-radius: 6px;
+				-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+					 -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+								box-shadow: 0 1px 2px rgba(0,0,0,.15);
+			}
+
+			.topbar .label {
+				margin-top: 8px;
+				padding-left: 5px;
+				padding-right: 5px;
+			}
+			
+			.hero-unit {
+				margin: 20px -20px;
+				background: url(http://raumzeitlabor.de/sites/all/themes/danland/images/slideshows/RaumZeitLaborLogo.jpg);
+				height: 240px;
+			}
+			
+			section {
+				margin-bottom: 20px;
+			}
+			
+			.box {
+				padding: 6px;
+				-webkit-border-radius: 6px;
+				-moz-border-radius: 6px;
+				border-radius: 6px;
+				background: #dedede;
+			}
+			.centered {
+				text-align: center;
+			}
+			#frame {
+				border: 0px;
+				width:100%;
+				height: 160px;
+			}
+		</style>
+
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+ <script type="text/javascript" src="http://twitter.github.com/bootstrap/1.4.0/bootstrap-scrollspy.js"></script>
+	</head>
+
+	<body>
+
+		<div class="topbar" data-scrollspy="scrollspy" >
+			<div class="fill">
+				<div class="container">
+					<a class="brand" href="#">RaumZeitLabor InfoPanel</a>
+
+					<span class="label important pull-right">Offen</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="content">
+				<div class="row">
+					<div class="span12">
+						<div class="row">
+							<div class="span3 centered box">
+								<h4>Stromverbauch</h4>
+								<h2>9001 kW</h2>
+							</div>
+							<div class="span3 centered box">
+								<h4>Temperatur</h4>
+								<h2>25 °C</h2>
+							</div>
+							<div class="span3 centered box">
+								<h4>User</h4>
+								<h2>43</h2>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="span5 box" id="frame_wrapper">
+								<h4>RNV: Boveristra&szlig;e</h4>
+								<iframe src="http://efa9-5.vrn.de/vrn/XSLT_DM_REQUEST?language=de&itdLPxx_dmlayout=gadget&itdLPxx_gadget=version_1.0.4&timeOffset=3&type_dm=any&mode=direct&limit=8&useRealtime=1&locationServerActive=1&anySigWhenPerfectNoOtherMatches=1&anyHitListReductionLimit=40&anyMaxSizeHitList=550&name_dm=6002359" id="frame"></iframe>
+							</div>
+						</div>
+					</div>
+					<div class="span5">
+						<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+						<script>
+							new TWTR.Widget({
+							  version: 2,
+							  type: 'search',
+							  search: '#rauzmzeitlabor OR #rzl OR @raumzeitlabor OR from:raumzeitlabor',
+							  interval: 30000,
+							  title: 'RaumZeitlabor related Tweets',
+							  subject: 'Twitter Awesomeness!!!1!',
+							  width: 'auto',
+							  height: 300,
+							  theme: {
+								shell: {
+								  background: '#8ec1da',
+								  color: '#ffffff'
+								},
+								tweets: {
+								  background: '#ffffff',
+								  color: '#444444',
+								  links: '#1985b5'
+								}
+							  },
+							  features: {
+								scrollbar: false,
+								loop: true,
+								live: true,
+								behavior: 'default'
+							  }
+							}).render().start();
+						</script>
+					</div>
+				</div>
+			</div>
+
+			<footer>
+				<p>&copy; RaumZeitLabor 2012</p>
+
+			</footer>
+
+		</div> <!-- /container -->
+
+	</body>
+</html>
