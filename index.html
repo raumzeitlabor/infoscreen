@@ -25,7 +25,7 @@
 				text-align: center; /* center align it with the container */
 			}
 			.container {
-				width: 1000px; 
+				width: 940px; 
 			}
 
 			/* The white background content wrapper */
@@ -74,8 +74,35 @@
 			}
 		</style>
 
- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
- <script type="text/javascript" src="http://twitter.github.com/bootstrap/1.4.0/bootstrap-scrollspy.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		"use strict";
+		 
+		function update() {
+			$.ajax({
+				url: 'ajax.php',
+				success: function(data) {
+					$("#temperature").html(data.temperature);
+					$("#devices").html(data.devices);
+					$("#power").html(data.power);
+					if (data.door == 1) {
+						$("#door").removeClass('success important').addClass('success');
+						$("#door").html("Offen");
+					} else {
+						$("#door").removeClass('success important').addClass('important');
+						$("#door").html("Geschlossen");
+					}
+					setTimeout('update()',30000);
+				}
+			}).fail(function() {
+				alert("Something went wrong. Please try again.");
+			});
+		}
+		
+		$(document).ready(function() {
+			update();
+		});
+	</script>
 	</head>
 
 	<body>
@@ -85,7 +112,7 @@
 				<div class="container">
 					<a class="brand" href="#">RaumZeitLabor InfoPanel</a>
 
-					<span class="label important pull-right">Offen</span>
+					<span class="label important pull-right" id="door">Offen</span>
 				</div>
 			</div>
 		</div>
@@ -93,22 +120,27 @@
 		<div class="container">
 			<div class="content">
 				<div class="row">
-					<div class="span12">
+					<div class="span10">
 						<div class="row">
 							<div class="span3 centered box">
 								<h4>Stromverbauch</h4>
-								<h2>9001 kW</h2>
+								<h2><span id="power">0</span> kW</h2>
 							</div>
 							<div class="span3 centered box">
 								<h4>Temperatur</h4>
-								<h2>25 °C</h2>
+								<h2><span id="temperature">0</span> °C</h2>
 							</div>
 							<div class="span3 centered box">
-								<h4>User</h4>
-								<h2>43</h2>
+								<h4>Ger&auml;te</h4>
+								<h2><span id="devices">0</span></h2>
 							</div>
 						</div>
 						<br>
+						<div class="row">
+							<div class="span9">
+								<img src="https://api.cosm.com/v2/feeds/42055/datastreams/Strom_Leistung.png?width=560&height=200&colour=%23f15a24&duration=1hour&title=Stromverbrauch&stroke_size=2&show_axis_labels=true&detailed_grid=true&scale=auto&timezone=Berlin" />
+							</div>
+						</div>
 						<div class="row">
 							<div class="span5 box" id="frame_wrapper">
 								<h4>RNV: Boveristra&szlig;e</h4>
@@ -116,7 +148,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="span5">
+					<div class="span6">
 						<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
 						<script>
 							new TWTR.Widget({
@@ -127,7 +159,7 @@
 							  title: 'RaumZeitlabor related Tweets',
 							  subject: 'Twitter Awesomeness!!!1!',
 							  width: 'auto',
-							  height: 300,
+							  height: 425,
 							  theme: {
 								shell: {
 								  background: '#8ec1da',

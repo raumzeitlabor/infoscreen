@@ -1,0 +1,3 @@
+[submodule "PachubeAPI"]
+	path = PachubeAPI
+	url = https://github.com/tiefpunkt/PachubeAPI.git

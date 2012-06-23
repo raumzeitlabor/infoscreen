@@ -1,0 +1,10 @@
+<?php
+class Configuration {
+	var $api_key =  "YOUR_API_KEY";
+	var $feed = YOUR_FEED_ID;
+	var $temperature = "YOUR_DATASTREAM_ID";
+	var $power = "YOUR_DATASTREAM_ID";
+}
+
+$config = new Configuration();
+?>
