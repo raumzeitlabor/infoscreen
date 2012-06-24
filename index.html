@@ -92,6 +92,7 @@
 						$("#door").removeClass('success important').addClass('important');
 						$("#door").html("Geschlossen");
 					}
+					$('#frame').attr('src', function ( i, val ) { return val; });
 					setTimeout('update()',30000);
 				}
 			}).fail(function() {
