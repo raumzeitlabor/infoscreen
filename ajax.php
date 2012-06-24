@@ -2,31 +2,56 @@
 include("PachubeAPI/PachubeAPI.php");
 include("config.php");
 
-$pachube = new PachubeAPI($config->api_key);
+$output= "";
 
-$json = $pachube->getFeed("json", $config->feed);
-//$temperature = json_decode($json)->current_value;
-//echo $temperature;
+// Try to see if there's some recent cached output available
+if (file_exists($config->cache) && (time() < filemtime($config->cache) + $config->cache_expire)) {
 
-foreach (json_decode($json)->datastreams as $datastream) {
-	switch ($datastream->id) {
-		case $config->temperature:
-			$data["temperature"] = $datastream->current_value;
-			break;
-		case $config->power:
-			$data["power"] = $datastream->current_value;
-			break;
-		case $config->door:
-			$data["door"] = $datastream->current_value;
-			break;
-		case $config->devices:
-			$data["devices"] = $datastream->current_value;
-			break;
+	// It is. Let's use that as our output.
+	$output = file_get_contents($config->cache);
+
+} else {
+
+	// No recent cached output. We need to get it from Cosm
+	$pachube = new PachubeAPI($config->api_key);
+
+	// Get the feed from the Cosm API, as a json
+	$json = $pachube->getFeed("json", $config->feed);
+
+	$data = array();
+	
+	// iterate through all data streams to get the values we need
+	foreach (json_decode($json)->datastreams as $datastream) {
+		switch ($datastream->id) {
+			case $config->temperature:
+				$data["temperature"] = $datastream->current_value;
+				break;
+			case $config->power:
+				$data["power"] = $datastream->current_value;
+				break;
+			case $config->door:
+				$data["door"] = $datastream->current_value;
+				break;
+			case $config->devices:
+				$data["devices"] = $datastream->current_value;
+				break;
+		}
 	}
+	
+	// Generate output
+	$data["source"] = "live";
+	$output = json_encode($data);
+	
+	// Write to cache
+	$data["source"] = "cache";
+	file_put_contents($config->cache, json_encode($data));
 }
 
+// Send header
 header('Cache-Control: no-cache, must-revalidate');
 header('Expires: Mon, 19 Jul 1997 00:00:00 GMT');
 header('Content-type: application/json');
-echo json_encode($data);
+
+// Send output
+echo $output;
 ?>

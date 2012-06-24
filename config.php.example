@@ -2,8 +2,12 @@
 class Configuration {
 	var $api_key =  "YOUR_API_KEY";
 	var $feed = YOUR_FEED_ID;
-	var $temperature = "YOUR_DATASTREAM_ID";
-	var $power = "YOUR_DATASTREAM_ID";
+	var $temperature = "Temperatur_Raum_Beamerplattform";
+	var $power = "Strom_Leistung";
+	var $door = "Status_Tuer";
+	var $devices = "Status_Geraete";
+	var $cache = "cache/data.js";
+	var $cache_expire = 30;
 }
 
 $config = new Configuration();
