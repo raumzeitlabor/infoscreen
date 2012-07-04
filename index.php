@@ -13,105 +13,10 @@
 
 		<!-- Le styles -->
 		<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
-		<style type="text/css">
-			/* Override some defaults */
-			html, body {
-				background-color: #eee;
-			}
-			body {
-				padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
-			}
-			.container > footer p {
-				text-align: center; /* center align it with the container */
-			}
-			.container {
-				width: 940px; 
-			}
-
-			/* The white background content wrapper */
-			.content {
-				background-color: #fff;
-				padding: 20px;
-				margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
-				-webkit-border-radius: 6px;
-					 -moz-border-radius: 6px;
-								border-radius: 6px;
-				-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-					 -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-								box-shadow: 0 1px 2px rgba(0,0,0,.15);
-			}
-
-			.topbar .label {
-				margin-top: 8px;
-				padding-left: 5px;
-				padding-right: 5px;
-			}
-			
-			.hero-unit {
-				margin: 20px -20px;
-				background: url(http://raumzeitlabor.de/sites/all/themes/danland/images/slideshows/RaumZeitLaborLogo.jpg);
-				height: 240px;
-			}
-			
-			section {
-				margin-bottom: 20px;
-			}
-			
-			.box {
-				padding: 6px;
-				-webkit-border-radius: 6px;
-				-moz-border-radius: 6px;
-				border-radius: 6px;
-				background: #dedede;
-			}
-			.centered {
-				text-align: center;
-			}
-			#frame {
-				border: 0px;
-				width:100%;
-				height: 160px;
-			}
-		</style>
-
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script type="text/javascript">
-		"use strict";
-		var graph_source;
+		<link rel="stylesheet" href="styles/main.css">
 		
-		function updateData() {
-			$.ajax({
-				url: 'ajax.php',
-				success: function(data) {
-					$("#temperature").html(data.temperature);
-					$("#devices").html(data.devices);
-					$("#power").html(data.power);
-					if (data.door == 1) {
-						$("#door").removeClass('success important').addClass('success');
-						$("#door").html("Offen");
-					} else {
-						$("#door").removeClass('success important').addClass('important');
-						$("#door").html("Geschlossen");
-					}
-					$('#frame').attr('src', function ( i, val ) { return val; });
-					setTimeout('updateData()',30000);
-				}
-			}).fail(function() {
-				alert("Something went wrong. Please try again.");
-			});
-		}
-		
-		function updateGraph() {
-			$('#graph').attr('src', function ( i, val ) { return graph_source + "&v=" + new Date().getTime()});
-			setTimeout('updateGraph()',120000);
-		}
-		
-		$(document).ready(function() {
-			updateData();
-			graph_source = $('#graph').attr('src');
-			setTimeout('updateGraph()',120000);
-		});
-	</script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="scripts/main.js"></script>
 	</head>
 
 	<body>
