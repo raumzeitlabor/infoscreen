@@ -193,7 +193,13 @@
 			</div>
 
 			<footer>
-				<p>&copy; RaumZeitLabor 2012</p>
+				<?php
+					if (is_file('./footer.inc.php')) {
+						include('./footer.inc.php');
+					} else {
+						echo "<p>&copy; RaumZeitLabor 2012</p>";
+					}
+				?>
 
 			</footer>
 
