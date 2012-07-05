@@ -17,6 +17,10 @@
 
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 		<script type="text/javascript" src="scripts/main.js"></script>
+		
+		<!-- Tumblr Foo -->
+		<script type='text/javascript' src='http://raumzeitlabor.tumblr.com/api/read/json?number=1&type=photo'></script>
+		<script type='text/javascript' src="scripts/tumblr.js"></script>
 	</head>
 
 	<body>
@@ -40,7 +44,8 @@
 								<h4>Stromverbauch</h4>
 								<h2><span id="power">0</span> W</h2>
 							</div>
-							<div class="span3 centered box"> <h4>Temperatur</h4>
+							<div class="span3 centered box">
+								<h4>Temperatur</h4>
 								<h2><span id="temperature">0</span> °C</h2>
 							</div>
 							<div class="span3 centered box">
@@ -55,67 +60,16 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="span5 box" id="frame_wrapper">
+							<div class="span5 centered box" id="frame_wrapper">
 								<h4>RNV: Boveristra&szlig;e</h4>
 								<iframe src="http://efa9-5.vrn.de/vrn/XSLT_DM_REQUEST?language=de&itdLPxx_dmlayout=gadget&itdLPxx_gadget=version_1.0.4&timeOffset=3&type_dm=any&mode=direct&limit=8&useRealtime=1&locationServerActive=1&anySigWhenPerfectNoOtherMatches=1&anyHitListReductionLimit=40&anyMaxSizeHitList=550&name_dm=6002359" id="frame"></iframe>
 							</div>
 							<div class="span4 centered box">
 								<h4>log.raumzeitlabor.de</h4>
 								<div id='tumblr' style='text-align:center;'>
-								    <img border='0' style='margin:0' src='placeholder.png' alt='' style="width:100%;"/>
-                                    <div id="invisible" style="position: absolute; top: -9999px;">&nbsp;</div>
+									<img border='0' style='margin:0' src='placeholder.png' alt='' style="width:100%;"/>
+									<div id="invisible" style="position: absolute; top: -9999px;">&nbsp;</div>
 								</div>
-								<script type='text/javascript' src='http://raumzeitlabor.tumblr.com/api/read/json?number=1&type=photo'>
-								</script>
-								<script type='text/javascript'>
-                                    $(document).ready(function() {
-                                        (function() {
-                                            var blabber_show = 5;
-                                            var blabb0r = function() {
-                                                if (blabber_show-- == 0) {
-                                                    tumblr_img();
-                                                    return;
-                                                }
-                                                /* lulz */
-                                                $('#tumblr img').fadeOut('slow', function() {
-                                                    $('#tumblr img').fadeIn('slow', blabb0r());
-                                                });
-                                            }
-                                            blabb0r();
-                                        })();
-
-                                        var current = 0;
-                                        var tumblr_img; tumblr_img = function() {
-                                            var max_h = 160;
-                                            var max_w = 250;
-                                            var resize = function(img) {
-                                                console.log("w: "+$(img).width()+" h: "+$(img).height());
-                                                if ($(img).height() > max_h) {
-                                                    var h = max_h;
-                                                    var w = Math.ceil($(img).width() / $(img).height() * max_h);
-                                                }
-
-                                                if ($(img).width() > max_w) {
-                                                    var w = max_w;
-                                                    var h = Math.ceil($(img).height() / $(img).width() * max_w);
-                                                }
-                                                $(img).css({ height: h+'px', width: w+'px' });
-                                            }
-
-                                            var t = $('<img/>', {
-                                                src: tumblr_api_read.posts[current]['photo-url-250'],
-                                            });
-
-                                            var inv = $('#invisible').empty();
-                                            t.appendTo($('#invisible')).load(function() {
-                                                resize(t);
-                                                current = ++current % tumblr_api_read.posts.length;
-                                                $('#tumblr img').replaceWith(t).fadeIn('slow');
-                                                setTimeout(function() { tumblr_img() }, 10000);
-                                            });
-                                        };
-                                    });
-								</script>
 							</div>
 						</div>
 					</div>
