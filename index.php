@@ -60,6 +60,35 @@
 								<h4>RNV: Boveristra&szlig;e</h4>
 								<iframe src="http://efa9-5.vrn.de/vrn/XSLT_DM_REQUEST?language=de&itdLPxx_dmlayout=gadget&itdLPxx_gadget=version_1.0.4&timeOffset=3&type_dm=any&mode=direct&limit=8&useRealtime=1&locationServerActive=1&anySigWhenPerfectNoOtherMatches=1&anyHitListReductionLimit=40&anyMaxSizeHitList=550&name_dm=6002359" id="frame"></iframe>
 							</div>
+							<div class="span4 centered box">
+								<h4>log.raumzeitlabor.de</h4>
+								<div class='ji-tumblr-photos'>
+									<a id='ji-tumblr-url-rzllog-1' href=''>
+										<img border='0' style='margin:0' id='ji-tumblr-photo-rzllog-1' src='' alt='' />
+									</a>
+									<a id='ji-tumblr-url-rzllog-2' href=''>
+										<img border='0' style='margin:0' id='ji-tumblr-photo-rzllog-2' src='' alt='' />
+									</a>
+									<a id='ji-tumblr-url-rzllog-3' href=''>
+										<img border='0' style='margin:0' id='ji-tumblr-photo-rzllog-3' src='' alt='' />
+									</a>
+									<a id='ji-tumblr-url-rzllog-4' href=''>
+										<img border='0' style='margin:0' id='ji-tumblr-photo-rzllog-4' src='' alt='' />
+									</a>
+								</div>
+								<script type='text/javascript' src='http://raumzeitlabor.tumblr.com/api/read/json?number=4&type=photo'>
+								</script>
+								<script type='text/javascript'>
+									document.getElementById('ji-tumblr-photo-rzllog-1').setAttribute('src', tumblr_api_read.posts[0]['photo-url-75']);
+									document.getElementById('ji-tumblr-url-rzllog-1').setAttribute('href', tumblr_api_read.posts[0]['url-with-slug']);
+									document.getElementById('ji-tumblr-photo-rzllog-2').setAttribute('src', tumblr_api_read.posts[1]['photo-url-75']);
+									document.getElementById('ji-tumblr-url-rzllog-2').setAttribute('href', tumblr_api_read.posts[1]['url-with-slug']);
+									document.getElementById('ji-tumblr-photo-rzllog-3').setAttribute('src', tumblr_api_read.posts[2]['photo-url-75']);
+									document.getElementById('ji-tumblr-url-rzllog-3').setAttribute('href', tumblr_api_read.posts[2]['url-with-slug']);
+									document.getElementById('ji-tumblr-photo-rzllog-4').setAttribute('src', tumblr_api_read.posts[3]['photo-url-75']);
+									document.getElementById('ji-tumblr-url-rzllog-4').setAttribute('href', tumblr_api_read.posts[3]['url-with-slug']);
+								</script>
+							</div>
 						</div>
 					</div>
 					<div class="span6">
