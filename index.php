@@ -55,6 +55,21 @@
 						</div>
 						<br>
 						<div class="row">
+							<div class="span3 centered box">
+								<h4>Mitglieder</h4>
+								<h2><span id="members">0</span></h2>
+							</div>
+							<div class="span3 centered box">
+								<h4>Kontostand</h4>
+								<h2><span id="account">0</span> &euro;</h2>
+							</div>
+							<div class="span3 centered box">
+								<h4>Au&szlig;enstellen</h4>
+								<h2><span id="outposts">viele&trade;</span></h2>
+							</div>
+						</div>
+						<br>
+						<div class="row">
 							<div class="span9">
 								<img src="https://api.cosm.com/v2/feeds/42055/datastreams/Strom_Leistung.png?width=560&height=200&colour=%23f15a24&duration=1hour&title=Stromverbrauch&stroke_size=2&show_axis_labels=true&detailed_grid=true&scale=auto&timezone=Berlin" id="graph" />
 							</div>

@@ -8,6 +8,8 @@ function updateData() {
 			$("#temperature").html(data.temperature);
 			$("#devices").html(data.devices);
 			$("#power").html(data.power);
+			$("#members").html(data.members);
+			$("#account").html(data.account);
 			if (data.door == 1) {
 				$("#door").removeClass('success important').addClass('success');
 				$("#door").html("Offen");

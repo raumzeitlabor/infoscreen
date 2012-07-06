@@ -6,6 +6,8 @@ class Configuration {
 	var $power = "Strom_Leistung";
 	var $door = "Status_Tuer";
 	var $devices = "Status_Geraete";
+	var $account = "Kontostand";
+	var $members = "Mitglieder";
 	var $cache = "cache/data.js";
 	var $cache_expire = 30;
 }

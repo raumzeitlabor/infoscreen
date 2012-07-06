@@ -35,6 +35,12 @@ if (file_exists($config->cache) && (time() < filemtime($config->cache) + $config
 			case $config->devices:
 				$data["devices"] = $datastream->current_value;
 				break;
+			case $config->members:
+				$data["members"] = $datastream->current_value;
+				break;
+			case $config->account:
+				$data["account"] = $datastream->current_value;
+				break;
 		}
 	}
 	
