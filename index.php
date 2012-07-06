@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>RaumZeitLabor InfoScreen</title>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 		<meta name="description" content="">
 		<meta name="author" content="">
 
