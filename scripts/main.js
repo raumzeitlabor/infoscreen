@@ -10,6 +10,8 @@ function updateData() {
 			$("#power").html(data.power);
 			$("#members").html(data.members);
 			$("#account").html(data.account);
+			$("#internet_down").html(data.internet_down);
+			$("#internet_up").html(data.internet_up);
 			if (data.door == 1) {
 				$("#door").removeClass('success important').addClass('success');
 				$("#door").html("Offen");

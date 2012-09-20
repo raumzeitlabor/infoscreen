@@ -65,8 +65,8 @@
 								<h2><span id="account">0</span> &euro;</h2>
 							</div>
 							<div class="span3 centered box">
-								<h4>Au&szlig;enstellen</h4>
-								<h2><span id="outposts">viele&trade;</span></h2>
+								<h4>Internet</h4>
+								<h4>&darr; <span id="internet_down">0</span> kB/s&nbsp;&nbsp;&uarr; <span id="internet_up">0/0</span> kB/s</h4>
 							</div>
 						</div>
 						<br>

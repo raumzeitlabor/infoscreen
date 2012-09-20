@@ -41,6 +41,12 @@ if (file_exists($config->cache) && (time() < filemtime($config->cache) + $config
 			case $config->account:
 				$data["account"] = $datastream->current_value;
 				break;
+			case $config->internet_up:
+				$data["internet_up"] = $datastream->current_value;
+				break;
+			case $config->internet_down:
+				$data["internet_down"] = $datastream->current_value;
+				break;
 		}
 	}
 	
