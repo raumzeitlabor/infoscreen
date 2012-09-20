@@ -95,7 +95,7 @@
 							new TWTR.Widget({
 							  version: 2,
 							  type: 'search',
-							  search: '#rauzmzeitlabor OR #rzl OR @raumzeitlabor OR from:raumzeitlabor',
+							  search: '#rauzmzeitlabor OR @raumzeitlabor OR from:raumzeitlabor',
 							  interval: 30000,
 							  title: 'RaumZeitlabor related Tweets',
 							  subject: 'Twitter Awesomeness!!!1!',
