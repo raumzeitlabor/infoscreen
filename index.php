@@ -66,7 +66,7 @@
 							</div>
 							<div class="span3 centered box">
 								<h4>Internet</h4>
-								<h5>&darr; <span id="internet_down">0</span> kB/s&nbsp;&nbsp;&uarr; <span id="internet_up">0</span> kB/s</h5>
+								<h5>&darr;<span id="internet_down">0</span> kB/s&nbsp;&uarr;<span id="internet_up">0</span> kB/s</h5>
 							</div>
 						</div>
 						<br>
