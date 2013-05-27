@@ -37,7 +37,7 @@ if (file_exists($config->cache) && (time() < filemtime($config->cache) + $config
 				break;
 			case $config->members:
 				$data["members"] = $datastream->current_value;
-				$data["mitgliederratio"] = ($data["members"]/314.931)*100;
+				$data["mitgliederratio"] = ($data["members"]/314931)*100;
 				break;
 			case $config->account:
 				$data["account"] = $datastream->current_value;
