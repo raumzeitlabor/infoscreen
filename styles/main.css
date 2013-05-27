@@ -64,3 +64,8 @@ footer {
 	margin: 10px;
 	padding: 0px;
 }
+
+.small {
+	font-size: 0.6em;
+	color: #666;
+}

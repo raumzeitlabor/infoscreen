@@ -9,7 +9,7 @@ function updateData() {
 			$("#devices").html(data.devices);
 			$("#power").html(data.power);
 			$("#members").html(data.members);
-			$("#mitgliedratio").html(data.mitgliedratio);
+			$("#memberratio").html(data.memberratio);
 			$("#account").html(data.account);
 			$("#internet_down").html(data.internet_down);
 			$("#internet_up").html(data.internet_up);

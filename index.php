@@ -58,7 +58,7 @@
 						<div class="row">
 							<div class="span3 centered box">
 								<h4>Mitglieder</h4>
-								<h2><span id="members">0</span></h2>
+								<h2><span id="members">0</span> <span class="small">(<span id="memberratio"></span> %)</span></h2>
 							</div>
 							<div class="span3 centered box">
 								<h4>Kontostand</h4>
@@ -67,13 +67,6 @@
 							<div class="span3 centered box">
 								<h4>Internet</h4>
 								<h5>&darr;<span id="internet_down">0</span> kB/s&nbsp;&uarr;<span id="internet_up">0</span> kB/s</h5>
-							</div>
-						</div>
-						<br>
-						<div class="row">
-							<div class="span9 centered box" style="padding-right:32px;">
-								<h4>Mitglied-Mannheim-Ratio</h4>
-								<h5><span id="mitgliedratio"></span> %</h5>
 							</div>
 						</div>
 						<br>
