@@ -71,6 +71,13 @@
 						</div>
 						<br>
 						<div class="row">
+							<div class="span9 centered box" style="padding-right:32px;">
+								<h4>Mitglied-Mannheim-Ratio</h4>
+								<h5><span id="mitgliedratio"></span> %</h5>
+							</div>
+						</div>
+						<br>
+						<div class="row">
 							<div class="span9">
 								<img src="https://api.cosm.com/v2/feeds/42055/datastreams/Strom_Leistung.png?width=560&height=200&colour=%23f15a24&duration=1hour&title=Stromverbrauch&stroke_size=2&show_axis_labels=true&detailed_grid=true&scale=auto&timezone=Berlin" id="graph" />
 							</div>
