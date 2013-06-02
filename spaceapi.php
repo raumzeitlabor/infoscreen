@@ -51,7 +51,7 @@ $data = array(
 			"url" => "http://log.raumzeitlabor.de/rss"
 		),
 		array(
-			"name" => "log",
+			"name" => "events",
 			"type" => "text/calendar",
 			"url" => "https://raumzeitlabor.de/events.ics"
 		)
