@@ -7,6 +7,7 @@ header('Cache-Control: no-cache, must-revalidate');
 header('Expires: Mon, 19 Jul 1997 00:00:00 GMT');
 header('Content-type: application/json; charset=utf-8');
 
+// Fill data
 $data = array(
 	"api" => "0.13",
 	"space" => "RaumZeitLabor",
@@ -24,7 +25,7 @@ $data = array(
 		"ml" => "raumzeitlabor@raumzeitlabor.de",
 		"twitter" => "@RaumZeitLabor",
 		"phone" => "+4962176231370",
-		"issue-mail" => "aGVsbG9AdGllZnB1bmt0LmNvbQ=="
+		"issue-mail" =>  base64_encode("hello@tiefpunkt.com")
 	),
 	"issue-report-channels" => array("issue-mail"),
 	"sensors" => array(
@@ -37,6 +38,23 @@ $data = array(
 		array( "member_count" => array( "member_count" => $data["members"])),
 		array( "devices" => array( "main" => $data["devices"])) ,
 		array( "account_balance" => array( "main" => $data["account"])) ,
+	),
+	"feeds" => array(
+		array(
+			"name" => "blog",
+			"type" => "application/rss+xml",
+			"url" => "https://raumzeitlabor.de/feed/"
+		),
+		array(
+			"name" => "log",
+			"type" => "application/rss+xml",
+			"url" => "http://log.raumzeitlabor.de/rss"
+		),
+		array(
+			"name" => "log",
+			"type" => "text/calendar",
+			"url" => "https://raumzeitlabor.de/events.ics"
+		)
 	),
 	"cache" => array( "schedule" => "m.02" ),
 	"state" => array(
@@ -54,7 +72,3 @@ $data = array(
 
 echo json_encode($data);
 ?>
-
-	
-	
-	
