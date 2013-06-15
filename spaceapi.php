@@ -3,6 +3,7 @@ include("ajax.php");
 $data = getInfoscreenData();
 
 // Send header
+header('Access-Control-Allow-Origin: *');
 header('Cache-Control: no-cache, must-revalidate');
 header('Expires: Mon, 19 Jul 1997 00:00:00 GMT');
 header('Content-type: application/json; charset=utf-8');
