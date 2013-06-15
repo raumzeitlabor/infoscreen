@@ -18,7 +18,11 @@ $data = array(
 		"lon" => 8.4994033,
 		"lat" => 49.5079481
 	),
-	"spacefed-auth" => false,
+	"spacefed" => array(
+		"spacenet" => false,
+		"spacesaml" => false,
+		"spacephone" => false
+	),
 	"contact" => array(
 		"email" => "info@raumzeitlabor.de",
 		"irc" => "irc://irc.hackint.eu/raumzeitlabor",
@@ -27,31 +31,45 @@ $data = array(
 		"phone" => "+4962176231370",
 		"issue-mail" =>  base64_encode("hello@tiefpunkt.com")
 	),
-	"issue-report-channels" => array("issue-mail"),
+	"issue_report_channels" => array("issue_mail"),
 	"sensors" => array(
-		array( "temp" => array(
-			"Main Space" => $data["temperature"] . "C"
-		)),
-		array( "power_consumption" => array(
-			"Main" => $data["power"] . "W"
-		)),
-		array( "member_count" => array( "member_count" => $data["members"])),
-		array( "devices" => array( "main" => $data["devices"])) ,
-		array( "account_balance" => array( "main" => $data["account"])) ,
+		"temperature" => array(
+			array(
+				"value"  => $data["temperature"],
+				"unit" => "°C",
+				"location" => "above the conference table"
+			)
+		),
+		"power_consumption" => array(
+			array(
+				"value" => $data["power"],
+				"unit" => "W",
+				"location" => "Main room"
+			)
+		),
+		"space_members" => array(
+			array( "value" => $data["members"])
+		),
+		"network_connections" =>array( 
+			array( "value" => $data["devices"])
+		),
+		"account_balance" => array(
+			array(
+				"value" => $data["account"],
+				"unit" => "EUR"
+			)
+		) ,
 	),
 	"feeds" => array(
-		array(
-			"name" => "blog",
+		"blog" => array(
 			"type" => "application/rss+xml",
 			"url" => "https://raumzeitlabor.de/feed/"
 		),
-		array(
-			"name" => "log",
+		"log" => array(
 			"type" => "application/rss+xml",
 			"url" => "http://log.raumzeitlabor.de/rss"
 		),
-		array(
-			"name" => "events",
+		"calendar" => array(
 			"type" => "text/calendar",
 			"url" => "https://raumzeitlabor.de/events.ics"
 		)
