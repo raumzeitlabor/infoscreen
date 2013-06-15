@@ -30,33 +30,33 @@ $data = array(
 		"ml" => "raumzeitlabor@raumzeitlabor.de",
 		"twitter" => "@RaumZeitLabor",
 		"phone" => "+4962176231370",
-		"issue-mail" =>  base64_encode("hello@tiefpunkt.com")
+		"issue_mail" =>  base64_encode("hello@tiefpunkt.com")
 	),
 	"issue_report_channels" => array("issue_mail"),
 	"sensors" => array(
 		"temperature" => array(
 			array(
-				"value"  => $data["temperature"],
+				"value"  => floatval($data["temperature"]),
 				"unit" => "°C",
 				"location" => "above the conference table"
 			)
 		),
 		"power_consumption" => array(
 			array(
-				"value" => $data["power"],
+				"value" => floatval($data["power"]),
 				"unit" => "W",
-				"location" => "Main room"
+				"location" => "main room"
 			)
 		),
 		"space_members" => array(
-			array( "value" => $data["members"])
+			array( "value" => intval($data["members"]))
 		),
 		"network_connections" =>array( 
-			array( "value" => $data["devices"])
+			array( "value" => intval($data["devices"]))
 		),
 		"account_balance" => array(
 			array(
-				"value" => $data["account"],
+				"value" => floatval($data["account"]),
 				"unit" => "EUR"
 			)
 		) ,
