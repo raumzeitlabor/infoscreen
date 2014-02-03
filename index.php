@@ -90,7 +90,7 @@
 						</div>
 					</div>
 					<div class="span6">
-						<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/search?q=%23raumzeitlabr+OR+%40raumzeitlabor"  data-widget-id="372066287532244992">Tweets about "#raumzeitlabor OR @raumzeitlabor"</a>
+						<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/search?q=%23raumzeitlabor+OR+%40raumzeitlabor"  data-widget-id="372066287532244992">Tweets about "#raumzeitlabor OR @raumzeitlabor"</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 					</div>
