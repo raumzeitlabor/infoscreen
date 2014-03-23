@@ -16,9 +16,12 @@ function updateData() {
 			if (data.door == 1) {
 				$("#door").removeClass('success important').addClass('success');
 				$("#door").html("Offen");
-			} else {
+			} else if (data.door == 0) {
 				$("#door").removeClass('success important').addClass('important');
 				$("#door").html("Geschlossen");
+			} else {
+				$("#door").removeClass('success important');
+				$("#door").html("Unbekannt");
 			}
 			$('#frame').attr('src', function ( i, val ) { return val; });
 			setTimeout('updateData()',30000);
