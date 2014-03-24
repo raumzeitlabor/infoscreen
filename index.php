@@ -49,7 +49,7 @@
 							<h4>Stromverbrauch</h4>
 							<h2><span id="power">0</span> W</h2>
 						</div>
-						<div class="unit-25">
+						<div class="unit-30">
 							<h4>Temperatur</h4>
 							<h2><span id="temperature">0</span> °C</h2>
 						</div>
@@ -57,7 +57,7 @@
 							<h4>Ger&auml;te</h4>
 							<h2><span id="devices">0</span></h2>
 						</div>
-						<div class="unit-25">
+						<div class="unit-20">
 							<h4>Internet</h4>
 							<h5>&darr;<span id="internet_down">0</span> kB/s<br>&uarr;<span id="internet_up">0</span> kB/s</h5>
 						</div>
@@ -93,7 +93,7 @@
 					</div>
 				</div>
 				<div class="unit-40">
-					<a height="400px" class="twitter-timeline" data-theme="dark" data-dnt="true" href="https://twitter.com/search?q=%23raumzeitlabor+OR+%40raumzeitlabor"  data-widget-id="372066287532244992" data-chrome="nofooter noheader noscrollbar noborders transparent">Tweets about "#raumzeitlabor OR @raumzeitlabor"</a>
+					<a height="400px" class="twitter-timeline" data-theme="dark" data-dnt="true" href="https://twitter.com/search?q=%23raumzeitlabor+OR+%40raumzeitlabor"  data-widget-id="372066287532244992" data-chrome="nofooter noheader noscrollbar noborders transparent" data-link-color="#00cc00">Tweets about "#raumzeitlabor OR @raumzeitlabor"</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 				</div>
