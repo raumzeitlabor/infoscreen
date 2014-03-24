@@ -29,6 +29,7 @@
 		<div class="container">
 			<header>
 				<span class="right" id="door">Offen</span>
+				<span class="right" id="clock"></span>
 				<h1 class="">RaumZeitLabor InfoScreen</h1>
 				
 			</header>
@@ -42,15 +43,15 @@
 			<div class="units-row">
 				<div class="unit-60">
 					<div class="units-row">
-						<div class="unit-25">
-							<h4>Stromverbauch</h4>
+						<div class="unit-30">
+							<h4>Stromverbrauch</h4>
 							<h2><span id="power">0</span> W</h2>
 						</div>
 						<div class="unit-25">
 							<h4>Temperatur</h4>
 							<h2><span id="temperature">0</span> °C</h2>
 						</div>
-						<div class="unit-25">
+						<div class="unit-20">
 							<h4>Ger&auml;te</h4>
 							<h2><span id="devices">0</span></h2>
 						</div>
@@ -71,7 +72,7 @@
 						</div>
 						<div class="unit-25">
 							<h4>Payback</h4>
-							<h2><span id="payback">0</span> &euro;</h2>
+							<h2><span id="payback">0</span></h2>
 						</div>
 					</div>
 

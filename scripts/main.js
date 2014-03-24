@@ -14,13 +14,13 @@ function updateData() {
 			$("#internet_down").html(data.internet_down);
 			$("#internet_up").html(data.internet_up);
 			if (data.door == 1) {
-				$("#door").removeClass('success important').addClass('success');
+				$("#door").removeClass('open closed unknown').addClass('open');
 				$("#door").html("Offen");
 			} else if (data.door == 0) {
-				$("#door").removeClass('success important').addClass('important');
+				$("#door").removeClass('open closed unknown').addClass('closed');
 				$("#door").html("Geschlossen");
 			} else {
-				$("#door").removeClass('success important');
+				$("#door").removeClass('open closed unknown').addClass('unknown');
 				$("#door").html("Unbekannt");
 			}
 			$('#frame').attr('src', function ( i, val ) { return val; });
@@ -36,7 +36,28 @@ function updateGraph() {
 	setTimeout('updateGraph()',120000);
 }
 
+function startClock() {
+	var today=new Date();
+	var h=today.getHours();
+	var m=today.getMinutes();
+	var s=today.getSeconds();
+
+	// add a zero in front of numbers<10
+	m = checkTime(m);
+	s = checkTime(s);
+	$('#clock').html(h+":"+m+":"+s);
+	setTimeout(function(){startClock()},500);
+}
+
+function checkTime(i) {
+	if (i<10)	{
+		i="0" + i;
+	}
+	return i;
+}
+
 $(document).ready(function() {
+	startClock()
 	updateData();
 	graph_source = $('#graph').attr('src');
 	setTimeout('updateGraph()',120000);
