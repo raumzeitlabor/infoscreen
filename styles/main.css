@@ -1,12 +1,13 @@
 /* Override some defaults */
 html, body {
-	background-color: #fff;
+	background-color: #000;
+	color: #fff;
 	overflow: hidden;
 }
 
 header {
 	border-bottom: 1px solid #333;
-	margin-top: 1em;
+	margin-top: 0.8em;
 	margin-bottom: 1.2em;
 }
 
@@ -23,6 +24,10 @@ footer p {
 	width: 940px; 
 	margin-left: auto;
 	margin-right: auto;
+}
+
+h1,h2,h3,h4,h5 {
+	color: #ccc;
 }
 
 h2,h5 {

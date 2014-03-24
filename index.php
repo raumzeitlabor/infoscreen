@@ -26,17 +26,19 @@
 	</head>
 
 	<body>
-		<div class="container">
-			<header>
-				<span class="right" id="door">Offen</span>
+		<header>
+			<div class="container">
+				<span class="right unknown" id="door">Unbekannt</span>
 				<span class="right" id="clock"></span>
 				<h1 class="">RaumZeitLabor InfoScreen</h1>
-				
-			</header>
+			</div>	
+		</header>
+		
+		<div class="container">
 
 			<div class="units-row">
 				<div class="units-100">
-					<img src="https://api.cosm.com/v2/feeds/42055/datastreams/Strom_Leistung.png?width=960&height=200&c=111166&duration=1hour&title=Stromverbrauch&stroke_size=2&show_axis_labels=true&detailed_grid=true&scale=auto&timezone=Berlin" id="graph" />
+					<img src="graph.php" id="graph" />
 				</div>
 			</div>
 						
@@ -91,7 +93,7 @@
 					</div>
 				</div>
 				<div class="unit-40">
-					<a height="400px" class="twitter-timeline" data-dnt="true" href="https://twitter.com/search?q=%23raumzeitlabor+OR+%40raumzeitlabor"  data-widget-id="372066287532244992" data-chrome="nofooter noheader noscrollbar noborders transparent">Tweets about "#raumzeitlabor OR @raumzeitlabor"</a>
+					<a height="400px" class="twitter-timeline" data-theme="dark" data-dnt="true" href="https://twitter.com/search?q=%23raumzeitlabor+OR+%40raumzeitlabor"  data-widget-id="372066287532244992" data-chrome="nofooter noheader noscrollbar noborders transparent">Tweets about "#raumzeitlabor OR @raumzeitlabor"</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 				</div>
