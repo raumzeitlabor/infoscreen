@@ -13,6 +13,7 @@ function updateData() {
 			$("#account").html(data.account);
 			$("#internet_down").html(data.internet_down);
 			$("#internet_up").html(data.internet_up);
+			$("#payback").html(data.payback);
 			if (data.door == 1) {
 				$("#door").removeClass('open closed unknown').addClass('open');
 				$("#door").html("Offen");

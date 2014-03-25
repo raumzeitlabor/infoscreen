@@ -49,6 +49,9 @@ function getInfoscreenData() {
 				case $config->internet_down:
 					$data["internet_down"] = $datastream->current_value;
 					break;
+				case $config->payback:
+					$data["payback"] = $datastream->current_value;
+					break;
 			}
 		}
 		

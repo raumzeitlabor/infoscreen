@@ -8,6 +8,9 @@ class Configuration {
 	var $devices = "Status_Geraete";
 	var $account = "Kontostand";
 	var $members = "Mitglieder";
+	var $payback = "Payback_Punkte";
+	var $internet_up = "internet.upload";
+	var $internet_down = "internet.download";
 	var $cache = "cache/data.js";
 	var $cache_expire = 30;
 }
