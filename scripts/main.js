@@ -62,4 +62,5 @@ $(document).ready(function() {
 	updateData();
 	graph_source = $('#graph').attr('src');
 	setTimeout('updateGraph()',120000);
+	document.body.style.zoom=document.documentElement.clientHeight/800;this.blur();
 });
