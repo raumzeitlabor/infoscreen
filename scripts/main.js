@@ -38,6 +38,7 @@ function updateGraph() {
 }
 
 function updateRnv(){
+	$('.rnvtable').remove();
 	$.ajax({
 		url: "rnv.php"
 	}).done(function(res){
@@ -61,6 +62,7 @@ function updateRnv(){
 		$('#rnvcontent').append(tbl);
 
 	});
+	setTimeout('updateData()',30000);
 }
 
 function startClock() {
