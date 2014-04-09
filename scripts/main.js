@@ -37,6 +37,32 @@ function updateGraph() {
 	setTimeout('updateGraph()',120000);
 }
 
+function updateRnv(){
+	$.ajax({
+		url: "rnv.php"
+	}).done(function(res){
+		var data = $.parseHTML(res);
+		var abfahrten = [[]];
+		var block = 0;
+		$(data).find('.ergebnis_txt').each(function(){
+		    if(abfahrten[block].length>3){
+		        block++;
+		        abfahrten[block]=[];
+		    }
+		    abfahrten[block].push(this);
+		});
+
+		var tbl = $('<table class="rnvtable">')
+		for(var i in abfahrten){
+		    var row = $("<tr>");
+		    row.append(abfahrten[i])
+		    tbl.append(row)
+		}
+		$('#rnvcontent').append(tbl);
+
+	});
+}
+
 function startClock() {
 	var today=new Date();
 	var h=today.getHours();
@@ -60,6 +86,7 @@ function checkTime(i) {
 $(document).ready(function() {
 	startClock()
 	updateData();
+	updateRnv();
 	graph_source = $('#graph').attr('src');
 	setTimeout('updateGraph()',120000);
 	document.body.style.zoom=document.documentElement.clientHeight/800;this.blur();

@@ -16,7 +16,7 @@
 		<link rel="stylesheet" href="styles/kube.min.css">
 		<link rel="stylesheet" href="styles/main.css">
 		
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 		<script type="text/javascript" src="scripts/main.js"></script>
 
 		<!-- Tumblr Foo -->
@@ -80,7 +80,7 @@
 					<div class="units-row">
 						<div class="unit-50" id="frame_wrapper">
 							<h4>RNV: Boveristra&szlig;e</h4>
-							<iframe src="http://efa9-5.vrn.de/vrn/XSLT_DM_REQUEST?language=de&itdLPxx_dmlayout=gadget&itdLPxx_gadget=version_1.0.5&timeOffset=3&type_dm=any&mode=direct&limit=8&useRealtime=1&locationServerActive=1&anySigWhenPerfectNoOtherMatches=1&anyHitListReductionLimit=40&anyMaxSizeHitList=550&name_dm=6002359" id="frame"></iframe>
+							<div id="rnvcontent"></div>
 						</div>
 						<div class="unit-50">
 							<h4>log.raumzeitlabor.de</h4>
