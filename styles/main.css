@@ -77,3 +77,8 @@ h2,h5 {
 .rnvtable {
 	font-size: 13px;
 }
+
+.rnvtable td {
+	padding: 2px 10px;
+	border-bottom: 1px solid #666;
+}
