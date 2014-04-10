@@ -1,5 +1,8 @@
 "use strict";
-var graph_source;
+var graph_source1;
+var graph_source2;
+var graph_source3;
+var graph_source4;
 
 function updateData() {
 	$.ajax({
@@ -33,8 +36,11 @@ function updateData() {
 }
 
 function updateGraph() {
-	$('.graph').attr('src', function ( i, val ) { return graph_source + "?v=" + new Date().getTime()});
-	setTimeout('updateGraph()',120000);
+	$('#graph1').attr('src', function ( i, val ) { return graph_source1 + "?v=" + new Date().getTime()});
+	$('#graph2').attr('src', function ( i, val ) { return graph_source2 + "?v=" + new Date().getTime()});
+	$('#graph3').attr('src', function ( i, val ) { return graph_source3 + "?v=" + new Date().getTime()});
+	$('#graph4').attr('src', function ( i, val ) { return graph_source4 + "?v=" + new Date().getTime()});
+	setTimeout('updateGraph()',30000);
 }
 
 function updateRnv(){
@@ -89,7 +95,10 @@ $(document).ready(function() {
 	startClock()
 	updateData();
 	updateRnv();
-	graph_source = $('#graph').attr('src');
-	setTimeout('updateGraph()',120000);
-	document.body.style.zoom=document.documentElement.clientHeight/800;
+	graph_source1 = $('#graph1').attr('src');
+	graph_source2 = $('#graph2').attr('src');
+	graph_source3 = $('#graph3').attr('src');
+	graph_source4 = $('#graph4').attr('src');
+	setTimeout('updateGraph()',30000);
+	document.body.style.zoom=document.documentElement.clientHeight/1070;
 });
