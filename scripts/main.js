@@ -36,10 +36,10 @@ function updateData() {
 }
 
 function updateGraph() {
-	$('#graph1').attr('src', function ( i, val ) { return graph_source1 + "?v=" + new Date().getTime()});
-	$('#graph2').attr('src', function ( i, val ) { return graph_source2 + "?v=" + new Date().getTime()});
-	$('#graph3').attr('src', function ( i, val ) { return graph_source3 + "?v=" + new Date().getTime()});
-	$('#graph4').attr('src', function ( i, val ) { return graph_source4 + "?v=" + new Date().getTime()});
+	$('#graph1').attr('src', function ( i, val ) { return graph_source1 + "&v=" + new Date().getTime()});
+	$('#graph2').attr('src', function ( i, val ) { return graph_source2 + "&v=" + new Date().getTime()});
+	$('#graph3').attr('src', function ( i, val ) { return graph_source3 + "&v=" + new Date().getTime()});
+	$('#graph4').attr('src', function ( i, val ) { return graph_source4 + "&v=" + new Date().getTime()});
 	setTimeout('updateGraph()',30000);
 }
 
