@@ -91,5 +91,5 @@ $(document).ready(function() {
 	updateRnv();
 	graph_source = $('#graph').attr('src');
 	setTimeout('updateGraph()',120000);
-	document.body.style.zoom=document.documentElement.clientHeight/800;this.blur();
+	document.body.style.zoom=document.documentElement.clientHeight/800;
 });
