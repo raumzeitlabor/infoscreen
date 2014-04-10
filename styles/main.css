@@ -32,6 +32,7 @@ h1,h2,h3,h4,h5 {
 
 h2,h5 {
 	font-weight:normal;
+	color: #64CD0E;
 }
 
 #frame {
@@ -81,4 +82,5 @@ h2,h5 {
 .rnvtable td {
 	padding: 2px 10px;
 	border-bottom: 1px solid #666;
+	color: #64CD0E;
 }
