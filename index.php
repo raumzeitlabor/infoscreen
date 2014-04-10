@@ -38,7 +38,7 @@
 			<div class="units-row">
 				<div class="units-100">
 					<img src="graph.php?type=stromverbrauch" id="graph1" />
-					<img src="graph.php?type=mitglieder" id="graph2" />
+					<img src="graph.php?type=temperatur" id="graph2" />
 				</div>
 			</div>
 			<div class="units-row">
