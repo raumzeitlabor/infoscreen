@@ -37,7 +37,14 @@
 
 			<div class="units-row">
 				<div class="units-100">
-					<img src="graph.php" id="graph" />
+					<img src="graph.php?type=stromverbrauch" class="graph" />
+					<img src="graph.php?type=mitglieder" class="graph" />
+				</div>
+			</div>
+			<div class="units-row">
+				<div class="units-100">
+					<img src="graph.php?type=payback" class="graph" />
+					<img src="graph.php?type=kontostand" class="graph" />
 				</div>
 			</div>
 						

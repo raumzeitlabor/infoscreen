@@ -33,7 +33,7 @@ function updateData() {
 }
 
 function updateGraph() {
-	$('#graph').attr('src', function ( i, val ) { return graph_source + "?v=" + new Date().getTime()});
+	$('.graph').attr('src', function ( i, val ) { return graph_source + "?v=" + new Date().getTime()});
 	setTimeout('updateGraph()',120000);
 }
 
