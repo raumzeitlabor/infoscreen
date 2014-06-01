@@ -110,7 +110,6 @@
 					if (is_file('./footer.inc.php')) {
 						include('./footer.inc.php');
 					} else {
-						echo "<p>&copy; RaumZeitLabor 2014</p>";
 					}
 				?>
 			</footer>
