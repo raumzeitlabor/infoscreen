@@ -21,7 +21,6 @@ footer p {
 }
 
 .container {
-	width: 940px; 
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -73,7 +72,6 @@ h2,h5 {
 #door.unknown {
 	background: orange;
 }
-
 
 .rnvtable {
 	font-size: 13px;

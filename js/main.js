@@ -100,5 +100,4 @@ $(document).ready(function() {
 	graph_source3 = $('#graph3').attr('src');
 	graph_source4 = $('#graph4').attr('src');
 	setTimeout('updateGraph()',30000);
-	document.body.style.zoom=document.documentElement.clientHeight/880;
 });
