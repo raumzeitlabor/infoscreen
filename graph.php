@@ -13,7 +13,7 @@ function loadGraph()
 			$imgname = "https://api.cosm.com/v2/feeds/42055/datastreams/Payback_Punkte.png?width=500&height=200&c=ff33ff&duration=30days&title=Payback%20Punkte&stroke_size=2&show_axis_labels=true&detailed_grid=true&scale=auto&timezone=Berlin&v=1395676268666";
 			break;
 		case 'kontostand':
-			$imgname = "https://api.cosm.com/v2/feeds/42055/datastreams/Kontostand.png?width=450&height=130&c=ff33ff&duration=30days&title=Kontostand&stroke_size=2&show_axis_labels=true&detailed_grid=true&scale=auto&timezone=Berlin&v=1395676268666";
+			$imgname = "https://api.cosm.com/v2/feeds/42055/datastreams/Kontostand.png?width=500&height=200&c=ff33ff&duration=30days&title=Kontostand&stroke_size=2&show_axis_labels=true&detailed_grid=true&scale=auto&timezone=Berlin&v=1395676268666";
 			break;
 	}
     $im = @imagecreatefrompng($imgname);
