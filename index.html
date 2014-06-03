@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>RaumZeitLabor InfoScreen</title>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/main.css">
+		<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+		<!-- Tumblr Foo -->
+		<script type='text/javascript' src='http://raumzeitlabor.tumblr.com/api/read/json?number=1&type=photo'></script>
+		<script type='text/javascript' src="js/tumblr.js"></script>
+		<!-- Tumblr Foo END -->
+	</head>
+	<body>
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">RaumZeitLabor InfoScreen</a>
+				</div>
+			<div class="navbar-collapse collapse">
+				<div class="navbar-fixed-top navbar-right">
+					<span class="navbar-right" id="door">Unbekannt</span>
+					<span class="navbar-right" id="clock"></span>
+				<div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<img src="graph.php?type=stromverbrauch" id="graph1" />
+					<img src="graph.php?type=temperatur" id="graph2" />
+				</div>
+				<div class="col-md-6">
+					<img src="graph.php?type=payback" id="graph3" />
+					<img src="graph.php?type=kontostand" id="graph4" />
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-8">
+					<div class="row">
+						<div class="col-md-3">
+							<h4>Stromverbrauch</h4>
+							<h2><span id="power">0</span> W</h2>
+							<h4>Mitglieder</h4>
+							<h2><span id="members">0</span> <span class="small">(<span id="memberratio"></span> %)</span></h2>
+						</div>
+						<div class="col-md-3">
+							<h4>Temperatur</h4>
+							<h2><span id="temperature">0</span> °C</h2>
+							<h4>Kontostand</h4>
+							<h2><span id="account">0</span> &euro;</h2>
+						</div>
+						<div class="col-md-3">
+							<h4>Ger&auml;te</h4>
+							<h2><span id="devices">0</span></h2>
+							<h4>Payback</h4>
+							<h2><span id="payback">0</span></h2>
+						</div>
+						<div class="col-md-3">
+							<h4>Internet</h4>
+							<h5>&darr;<span id="internet_down">0</span> kB/s<br>&uarr;<span id="internet_up">0</span> kB/s</h5>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<h4>RNV: Boveristra&szlig;e</h4>
+							<div id="rnvcontent"></div>
+						</div>
+						<div class="col-md-6">
+							<h4>log.raumzeitlabor.de</h4>
+							<div id='tumblr' style='text-align:center;'>
+								<img border='0' style='margin:0' src='placeholder.png' alt='' style="width:100%;"/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<a height="400px" class="twitter-timeline" data-theme="dark" data-dnt="true" href="https://twitter.com/search?q=%23raumzeitlabor+OR+%40raumzeitlabor"  data-widget-id="372066287532244992" data-chrome="nofooter noheader noscrollbar noborders transparent" data-link-color="#00cc00">Tweets about "#raumzeitlabor OR @raumzeitlabor"</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<p>RaumZeitLabor 2014</p>
+		</footer>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+		<script src="js/vendor/bootstrap.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
