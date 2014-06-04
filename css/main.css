@@ -28,6 +28,11 @@ h1,h2,h3,h4,h5 {
 	color: #ccc;
 }
 
+h4{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
 h2,h5 {
 	font-weight:normal;
 	color: #64CD0E;
@@ -48,6 +53,7 @@ h2,h5 {
 	display: block;
 	margin: 8px 0px;
 	padding: 3px;
+	font-weight: bold;
 }
 
 #door {
@@ -80,4 +86,8 @@ h2,h5 {
 	padding: 2px 10px;
 	border-bottom: 1px solid #666;
 	color: #64CD0E;
+}
+
+.navbar {
+	margin-bottom: 0px;
 }

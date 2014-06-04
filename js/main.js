@@ -103,7 +103,7 @@ $(document).ready(function() {
 	var current = 0;
 	var image_loaded = false;
 	var tumblr_img; tumblr_img = function() {
-	var max_h = 400;
+	var max_h = 250;
 	var max_w = 450;
 	var resize = function(img) {
 			if ($(img).height() > max_h) {
