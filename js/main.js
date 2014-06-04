@@ -103,8 +103,8 @@ $(document).ready(function() {
 	var current = 0;
 	var image_loaded = false;
 	var tumblr_img; tumblr_img = function() {
-	var max_h = 160;
-	var max_w = 250;
+	var max_h = 400;
+	var max_w = 450;
 	var resize = function(img) {
 			if ($(img).height() > max_h) {
 				var h = max_h;
@@ -119,7 +119,7 @@ $(document).ready(function() {
 			}
 
 			var t = $('<img/>', {
-				src: tumblr_api_read.posts[current]['photo-url-250'],
+				src: tumblr_api_read.posts[current]['photo-url-400'],
 			});
 
 			var inv = $('#invisible').empty();
