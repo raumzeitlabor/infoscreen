@@ -19,7 +19,10 @@ function loadGraph()
     $im = @imagecreatefrompng($imgname);
 
     imagefilter($im, IMG_FILTER_NEGATE);
-    return $im;
+    $new_image = imagecreatetruecolor(500, 185);
+    imagecopy($new_image, $im, 0, 0, 0,0, 500, 200);
+
+    return $new_image;
 }
 
 if(realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME'])) {
