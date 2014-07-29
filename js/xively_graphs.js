@@ -23,7 +23,6 @@ function get_graphs() {
   xively.datastream.history( "42055", "Payback_Punkte", query_kontopayback, payback_callback);
   xively.datastream.history( "42055", "Kontostand", query_kontopayback, konto_callback);
   xively.datastream.history( "42055", "Temperatur_aussen", query_stromtemp, temp_aussen_callback);
-  setTimeout('get_graphs()',30000);
 }
 
 function strom_callback(data) {
