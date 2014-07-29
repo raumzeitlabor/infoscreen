@@ -1,8 +1,4 @@
 "use strict";
-var graph_source1;
-var graph_source2;
-var graph_source3;
-var graph_source4;
 
 function updateData() {
 	$.ajax({
@@ -92,11 +88,7 @@ $(document).ready(function() {
 	startClock()
 	updateData();
 	updateRnv();
-	graph_source1 = $('#graph1').attr('src');
-	graph_source2 = $('#graph2').attr('src');
-	graph_source3 = $('#graph3').attr('src');
-	graph_source4 = $('#graph4').attr('src');
-	setTimeout('updateGraph()',30000);
+	updateGraph();
 	var current = 0;
 	var image_loaded = false;
 	var tumblr_img; tumblr_img = function() {
