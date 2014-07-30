@@ -3,6 +3,7 @@
         position: relative;
         font-family: Helvetica, sans-serif;
 	color: #FFFFFF;
+	margin-bottom: 10px;
 }
 .chart {
         position: relative;
@@ -17,6 +18,7 @@
 
 .rickshaw_graph {
 	position: relative;
+	margin-right: 20px;
 }
 .rickshaw_graph svg {
 	display: block;	
