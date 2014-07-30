@@ -10,12 +10,20 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/graph.css">
+		<link rel="stylesheet" href="css/legend.css">
 		<link rel="stylesheet" href="css/main.css">
+		<script src="js/vendor/d3.v3.min.js"></script>
+		<script src="js/vendor/d3.layout.min.js"></script>
+		<script src="js/vendor/rickshaw.min.js"></script>
+		<script src="js/vendor/moment.min.js"></script>
 		<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
 		<script src="js/vendor/bootstrap.min.js"></script>
-		<script async src="js/main.js"></script
+		<script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.3.min.js"></script>
+		<script src="js/xively_graphs.js"></script>
+		<script async src="js/main.js"></script>
 		<!-- Tumblr Foo -->
 		<script type='text/javascript' src='http://raumzeitlabor.tumblr.com/api/read/json?number=1&type=photo'></script>
 		<!-- Tumblr Foo END -->
@@ -37,15 +45,46 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
-					<img src="graph.php?type=stromverbrauch" id="graph1" />
-					<img src="graph.php?type=temperatur" id="graph2" />
+					<div style="text-align: center;">Stromverbrauch</div>
+					<div class="chart_container">
+						<div class="y_axis" id="strom_y_axis"></div>
+						<div class="chart" id="strom_chart">
+							<div class="legend_container">
+								<div class="legend" id="strom_legend"></div>
+							</div>
+						</div>
+					</div>
+					<div style="text-align: center;">Temperatur</div>
+					<div class="chart_container">
+						<div class="y_axis" id="temp_y_axis"></div>
+						<div class="chart" id="temp_chart">
+							<div class="legend_container">
+								<div class="legend" id="temp_legend"></div>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="col-md-6">
-					<img src="graph.php?type=payback" id="graph3" />
-					<img src="graph.php?type=kontostand" id="graph4" />
+					<div style="text-align: center;">Paybackpunkte</div>
+					<div class="chart_container">
+						<div class="y_axis" id="payback_y_axis"></div>
+						<div class="chart" id="payback_chart">
+							<div class="legend_container">
+								<div class="legend" id="payback_legend"></div>
+							</div>
+						</div>
+					</div>
+					<div style="text-align: center;">Kontostand</div>
+					<div class="chart_container">
+						<div class="y_axis" id="konto_y_axis"></div>
+						<div class="chart" id="konto_chart">
+							<div class="legend_container">
+								<div class="legend" id="konto_legend"></div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-
 			<div class="row">
 				<div class="col-md-8">
 					<div class="row">
@@ -92,8 +131,5 @@
 				</div>
 			</div>
 		</div>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
-		<script src="js/vendor/bootstrap.min.js"></script>
 	</body>
 </html>
