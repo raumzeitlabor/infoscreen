@@ -1,4 +1,4 @@
-xively.setKey("M3JtslLtgs9iBo1YWcnk6LEmMBHmMrCZhsGWtb0jXdSCFwJA"); 
+xively.setKey("M3JtslLtgs9iBo1YWcnk6LEmMBHmMrCZhsGWtb0jXdSCFwJA");
 var temp_series = [];
 var temp_min = Number.MAX_VALUE;
 var temp_max = Number.MIN_VALUE;
@@ -89,11 +89,12 @@ function drawGraph(data, scale, name) {
   var graph = new Rickshaw.Graph({
     element: document.querySelector("#"+name+"_chart"),
     renderer: 'line',
-    series: data 
+    height: 200,
+    series: data
   });
 
   var time;
-  var timeunit;  
+  var timeunit;
   if(name == "strom" || name == "temp"){
     time = new Rickshaw.Fixtures.Time();
     timeunit = time.unit('15 minute');
@@ -118,7 +119,7 @@ function drawGraph(data, scale, name) {
   } else {
     tickformat = Rickshaw.Fixtures.Number.formatKMBT;
   }
- 
+
   var y_axis = new Rickshaw.Graph.Axis.Y.Scaled({
      graph: graph,
      orientation: 'left',
