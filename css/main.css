@@ -37,11 +37,6 @@ h4{
 	margin-bottom: 0px;
 }
 
-h2,h5 {
-	font-weight:normal;
-	color: #64CD0E;
-}
-
 #frame {
 	border: 0px;
 	width:100%;
@@ -94,4 +89,17 @@ h2,h5 {
 
 .navbar {
 	margin-bottom: 0px;
+}
+
+.graph h5 {
+    text-align: center;
+
+}
+
+.nograph [class*="col-"] {
+    padding-left:  55px; /* 15px + 40px = 55px */
+}
+
+.row {
+    margin-top: 10px;
 }
