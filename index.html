@@ -30,7 +30,7 @@
 	</head>
 	<body>
 		<div class="navbar navbar-inverse" role="navigation">
-			<div class="container">
+			<div class="container-fluid">
 				<div class="navbar-header">
 					<a class="navbar-brand" href="#">RaumZeitLabor InfoScreen</a>
 				</div>
@@ -44,50 +44,54 @@
 		</div>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-6">
-					<div style="text-align: center;">Stromverbrauch</div>
-					<div class="chart_container">
-						<div class="y_axis" id="strom_y_axis"></div>
-						<div class="chart" id="strom_chart">
-							<div class="legend_container">
-								<div class="legend" id="strom_legend"></div>
-							</div>
-						</div>
-					</div>
-					<div style="text-align: center;">Temperatur</div>
-					<div class="chart_container">
-						<div class="y_axis" id="temp_y_axis"></div>
-						<div class="chart" id="temp_chart">
-							<div class="legend_container">
-								<div class="legend" id="temp_legend"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div style="text-align: center;">Paybackpunkte</div>
-					<div class="chart_container">
-						<div class="y_axis" id="payback_y_axis"></div>
-						<div class="chart" id="payback_chart">
-							<div class="legend_container">
-								<div class="legend" id="payback_legend"></div>
-							</div>
-						</div>
-					</div>
-					<div style="text-align: center;">Kontostand</div>
-					<div class="chart_container">
-						<div class="y_axis" id="konto_y_axis"></div>
-						<div class="chart" id="konto_chart">
-							<div class="legend_container">
-								<div class="legend" id="konto_legend"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-8">
+				<div class="col-md-9">
+					<!-- large left column, main content -->
 					<div class="row">
+						<div class="col-md-6">
+						<!-- diagramme Strom und Temp -->
+							<div style="text-align: center;">Stromverbrauch</div>
+							<div class="chart_container">
+								<div class="y_axis" id="strom_y_axis"></div>
+								<div class="chart" id="strom_chart">
+									<div class="legend_container">
+										<div class="legend" id="strom_legend"></div>
+									</div>
+								</div>
+							</div>
+							<div style="text-align: center;">Temperatur</div>
+							<div class="chart_container">
+								<div class="y_axis" id="temp_y_axis"></div>
+								<div class="chart" id="temp_chart">
+									<div class="legend_container">
+										<div class="legend" id="temp_legend"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+						<!-- diagramme payback und konto -->
+							<div style="text-align: center;">Paybackpunkte</div>
+							<div class="chart_container">
+								<div class="y_axis" id="payback_y_axis"></div>
+								<div class="chart" id="payback_chart">
+									<div class="legend_container">
+										<div class="legend" id="payback_legend"></div>
+									</div>
+								</div>
+							</div>
+							<div style="text-align: center;">Kontostand</div>
+							<div class="chart_container">
+								<div class="y_axis" id="konto_y_axis"></div>
+								<div class="chart" id="konto_chart">
+									<div class="legend_container">
+										<div class="legend" id="konto_legend"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<!-- Generelle Anzeigen von Xively-->
 						<div class="col-md-3">
 							<h4>Stromverbrauch</h4>
 							<h2><span id="power">0</span> W</h2>
@@ -112,11 +116,15 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-4">
+						<!-- links RNV table, rechts tumblr log -->	
+						<div class="col-md-3">
 							<h4><center>Haltestelle Boveristra&szlig;e</center></h4>
-							<div id="rnvcontent"></div>
+							<center><div id="rnvcontent"></div></center>
 						</div>
-						<div class="col-md-8">
+						<div class="col-md-3">
+							<!-- empty space?! -->
+						</div>
+						<div class="col-md-3">
 							<h4><center>log.raumzeitlabor.de</center></h4>
 							<div id='tumblr' style='text-align:center;'>
 								<img border='0' style='margin:0' src='placeholder.png' alt='' style="width:100%;"/>
@@ -124,10 +132,14 @@
 							<div id="invisible" style="position: absolute; top: -9999px;">&nbsp;</div>
 						</div>
 					</div>
+					<div class="row">
+						<!-- Issue Tracker -->	
+					</div>
 				</div>
-				<div class="col-md-4">
-					<a height="400px" class="twitter-timeline" data-theme="dark" data-dnt="true" href="https://twitter.com/search?q=%23raumzeitlabor+OR+%40raumzeitlabor"  data-widget-id="372066287532244992" data-chrome="nofooter noheader noscrollbar noborders transparent" data-link-color="#00cc00">Tweets about "#raumzeitlabor OR @raumzeitlabor"</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				<div class="col-md-3">
+					<!-- Twitter timeline, right large column -->
+					<a height="1130px" class="twitter-timeline" data-theme="dark" data-dnt="true" href="https://twitter.com/search?q=%23raumzeitlabor+OR+%40raumzeitlabor"  data-widget-id="372066287532244992" data-chrome="nofooter noheader noscrollbar noborders transparent" data-link-color="#00cc00">Tweets about "#raumzeitlabor OR @raumzeitlabor"</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 				</div>
 			</div>
 		</div>

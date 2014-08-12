@@ -6,8 +6,7 @@
 	margin-bottom: 10px;
 }
 .chart {
-        position: relative;
-        left: 40px;
+	margin-left: 40px;
 }
 .y_axis {
         position: absolute;
