@@ -77,6 +77,7 @@ function loadData_float(data, name, label, series, min, max) {
   }
   if(label == "Aussen"){
     series[1] = { data: data_points, color: '#0000aa', name: label, scale: scale};
+    series[0].scale = scale; //use the final calculated scale also for the inside temperature graph
     drawGraph(series, scale, name);
   }
 }
