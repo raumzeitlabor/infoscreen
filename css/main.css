@@ -28,8 +28,9 @@ footer p {
 	margin-right: auto;
 }
 
-h1,h2,h3,h4,h5 {
+h1,h3,h4 {
 	color: #ccc;
+	text-align: center;
 }
 
 h2,h5{
@@ -96,9 +97,12 @@ h4{
 	margin-bottom: 0px;
 }
 
-.graph h5 {
+.graph h4 {
     text-align: center;
+}
 
+.nograph h4,h5 {
+    text-align: left;
 }
 
 .nograph [class*="col-"] {

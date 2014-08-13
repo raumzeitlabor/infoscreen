@@ -1,7 +1,7 @@
 xively.setKey("M3JtslLtgs9iBo1YWcnk6LEmMBHmMrCZhsGWtb0jXdSCFwJA");
 var temp_series = [];
-var temp_min = Number.MAX_VALUE;
-var temp_max = Number.MIN_VALUE;
+var temp_min;
+var temp_max;
 function get_graphs() {
   var query_stromtemp = {
     start: moment().subtract("minutes", 120).toJSON(),
@@ -29,10 +29,10 @@ function strom_callback(data) {
   loadData(data, "strom", "Watt");
 }
 function temp_innen_callback(data) {
-  loadData_float(data, "temp", "Innen", temp_series, temp_min, temp_max);
+  loadData_float(data, "temp", "Innen", temp_series);
 }
 function temp_aussen_callback(data) {
-  loadData_float(data, "temp", "Aussen", temp_series, temp_min, temp_max);
+  loadData_float(data, "temp", "Aussen", temp_series);
 }
 function payback_callback(data) {
   loadData(data, "payback", "Punkte");
@@ -42,6 +42,7 @@ function konto_callback(data) {
 }
 
 function loadData(data, name, label) {
+  if (data.status == 403){return;} //don't even try to process if xively API denied the request
   var data_points = [];
   var scale;
   var min = Number.MAX_VALUE;
@@ -59,24 +60,26 @@ function loadData(data, name, label) {
   drawGraph(series, scale, name);
 }
 
-function loadData_float(data, name, label, series, min, max) {
+function loadData_float(data, name, label, series) {
+  if (data.status == 403){return;} //don't even try to process if xively API denied the request
   var data_points = [];
   var scale;
   for (var i=0; i < data.datapoints.length; i++ ) {
     var date = moment(data.datapoints[i].at);
     var value = parseFloat(data.datapoints[i].value);
     data_points[i] = {x: date.unix(), y: value};
-    min = Math.min(min, value);
-    max = Math.max(max, value);
+    temp_min = Math.min(temp_min, value);
+    temp_max = Math.max(temp_max, value);
   }
-  min -= 0.05;
-  max += 0.3;
-  scale = d3.scale.linear().domain([min, max]).nice();
+  temp_min -= 0.5;
+  temp_max += 0.5;
+  scale = d3.scale.linear().domain([temp_min, temp_max]).nice();
   if(label == "Innen"){
     series[0] = { data: data_points, color: '#aa0000', name: label, scale: scale};
   }
   if(label == "Aussen"){
     series[1] = { data: data_points, color: '#0000aa', name: label, scale: scale};
+    series[0].scale = series[1].scale; //use the final calculated scale also for the inside temperature graph
     drawGraph(series, scale, name);
   }
 }
