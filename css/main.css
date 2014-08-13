@@ -27,6 +27,10 @@ footer p {
 	margin-left: auto;
 	margin-right: auto;
 }
+h2,h5{
+	font-weight:normal;
+	color: #64CD0E;
+}
 
 h1,h2,h3,h4,h5 {
 	color: #ccc;
