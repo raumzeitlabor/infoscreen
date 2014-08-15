@@ -12,8 +12,8 @@ header('Content-type: application/json; charset=utf-8');
 $data = array(
 	"api" => "0.13",
 	"space" => "RaumZeitLabor",
-	"logo" => "http://raumzeitlabor.de/w/images/8/85/RaumZeitLabor_-_Logo_-_Schwarz.png",
-	"url" => "http://raumzeitlabor.de",
+	"logo" => "https://wiki.raumzeitlabor.de/images/8/85/RaumZeitLabor_-_Logo_-_Schwarz.png",
+	"url" => "https://raumzeitlabor.de",
 	"location" => array(
 		"address" => "Boveristrasse 22-24, 68309 Mannheim, Germany",
 		"lon" => 8.4994033,
@@ -84,8 +84,8 @@ $data = array(
 		"open" => ($data["door"] == 1)
 	),
 	"projects" => array(
-		"http://github.com/raumzeitlabor",
-		"http://wiki.raumzeitlabor.de/wiki/Kategorie:Projekt"
+		"https://github.com/raumzeitlabor",
+		"https://wiki.raumzeitlabor.de/wiki/Kategorie:Projekt"
 	)
 );
 
