@@ -55,13 +55,14 @@ function updateRnv(){
 		var tbl = $('<table class="rnvtable">')
 		for(var i in abfahrten){
 		    var row = $("<tr>");
+		    $(abfahrten[i]).css('width', '')
 		    row.append(abfahrten[i])
 		    tbl.append(row)
 		}
 		$('#rnvcontent').append(tbl);
 
 	});
-	setTimeout('updateData()',30000);
+	setTimeout('updateRnv()',30000);
 }
 
 function startClock() {
