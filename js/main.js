@@ -37,7 +37,6 @@ function updateGraph() {
 }
 
 function updateRnv(){
-	$('.rnvtable').remove();
 	$.ajax({
 		url: "rnv.php"
 	}).done(function(res){
@@ -59,6 +58,7 @@ function updateRnv(){
 		    row.append(abfahrten[i])
 		    tbl.append(row)
 		}
+		$('.rnvtable').remove();
 		$('#rnvcontent').append(tbl);
 
 	});
