@@ -163,3 +163,13 @@ h4{
 .row {
     margin-top: 10px;
 }
+
+#adscreen {
+	position:absolute;
+	top:0px;
+	left:0px;
+	background:#006699;
+	color:#FFFFFF;
+	width:1920px;
+	height:1200px;
+}
