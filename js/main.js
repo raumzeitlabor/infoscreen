@@ -1,5 +1,24 @@
 "use strict";
 
+function adScreen()
+{
+	this.adImages = ['splash.png']; // add more images here
+	this.currentAd = 0;
+    this.init = function() {
+    	setInterval(function() {
+    		theAdScreen.showAd();
+    	}, 60*1000);
+    	$('#adscreen').hide();
+	}
+	this.showAd = function(){ 
+		this.currentAdd = (this.currentAd+1)%this.adImages.length;
+		$('#adscreen').css('background-image', 'url("ads/'+this.adImages[this.currentAd]+'")').show();
+    	setTimeout(function(){ $('#adscreen').hide(); }, 5000);
+	}
+}
+
+var theAdScreen = new adScreen();
+
 function updateData() {
 	$.ajax({
 		url: 'ajax.php',
@@ -144,4 +163,7 @@ $(document).ready(function() {
             }
         });
     }, 1000*60*10);
+
+    theAdScreen.init();
+
 });
