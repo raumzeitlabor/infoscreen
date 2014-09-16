@@ -2,8 +2,7 @@
 include("PachubeAPI/PachubeAPI.php");
 include("config.php");
 
-function getInfoscreenData() {
-	global $config;
+function getInfoscreenData($config) {
 	
 	// Try to see if there's some recent cached output available
 	if (file_exists($config->cache) && (time() < filemtime($config->cache) + $config->cache_expire)) {
@@ -55,6 +54,8 @@ function getInfoscreenData() {
 			}
 		}
 		
+		$data["mqtt"] = readMQTTData();
+
 		// Write to cache
 		$data["source"] = "cache";
 		file_put_contents($config->cache, json_encode($data));
@@ -66,6 +67,29 @@ function getInfoscreenData() {
 	}
 }
 
+/**
+ * Parses the FHEM JSON tree and extract the devices and their state.
+ */
+function readMQTTData () {
+	$mqttData = array();
+
+	$json = json_decode(file_get_contents("http://infra.raumzeitlabor.de/fhem?cmd=jsonlist&XHR=1"));
+
+	foreach ($json->Results as $result) {
+		if ($result->list == "PCA301") {
+			foreach ($result->devices as $device) {
+				$mqttData[] = array(
+					"alias" => $device->ATTR->alias,
+					"state" => $device->STATE);
+			}
+		}
+	}
+
+	return $mqttData;	
+}	
+
+$config = new Configuration();
+readMQTTData();
 if(realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME'])) {
 	// Send header
 	header('Cache-Control: no-cache, must-revalidate');
@@ -73,6 +97,6 @@ if(realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME'])) {
 	header('Content-type: application/json');
 
 	// Send output
-	echo json_encode(getInfoscreenData());
+	echo json_encode(getInfoscreenData($config));
 }
 ?>

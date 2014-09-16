@@ -1,3 +1,6 @@
 [submodule "PachubeAPI"]
 	path = PachubeAPI
 	url = https://github.com/tiefpunkt/PachubeAPI.git
+[submodule "open-iconic"]
+	path = open-iconic
+	url = https://github.com/iconic/open-iconic.git
