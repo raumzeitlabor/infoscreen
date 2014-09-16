@@ -1,7 +1,43 @@
+/* Import Miso Webfont */
+@font-face {
+    font-family: 'misoregular';
+    src: url('../fonts/../fonts/miso-regular-webfont.eot');
+    src: url('../fonts/miso-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/miso-regular-webfont.woff') format('woff'),
+         url('../fonts/miso-regular-webfont.ttf') format('truetype'),
+         url('../fonts/miso-regular-webfont.svg#misoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'misolight';
+    src: url('../fonts/miso-light-webfont.eot');
+    src: url('../fonts/miso-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/miso-light-webfont.woff') format('woff'),
+         url('../fonts/miso-light-webfont.ttf') format('truetype'),
+         url('../fonts/miso-light-webfont.svg#misolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'misobold';
+    src: url('../fonts/miso-bold-webfont.eot');
+    src: url('../fonts/miso-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/miso-bold-webfont.woff') format('woff'),
+         url('../fonts/miso-bold-webfont.ttf') format('truetype'),
+         url('../fonts/miso-bold-webfont.svg#misobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Override some defaults */
 html, body {
 	background-color: #000;
 	color: #fff;
+	overflow: hidden;
 }
 
 header {
@@ -19,23 +55,40 @@ footer p {
 	text-align: center; /* center align it with the container */
 }
 
+#twitter_widget {
+	text-align: right;
+}
 .container {
 	margin-left: auto;
 	margin-right: auto;
 }
 
-h1,h2,h3,h4,h5 {
+.navbar,h1,h2,h3,h4,h5{
+    font-family: 'misoregular';
+}
+
+h1,h3,h4 {
 	color: #ccc;
+	text-align: center;
+}
+
+h2{
+	font-size: 55px;
+	margin-top: 0px;
+}
+
+h4{
+	font-size: 35px;
+}
+	
+h2,h5{
+	font-weight:normal;
+	color: #64CD0E;
 }
 
 h4{
 	margin-top: 0px;
 	margin-bottom: 0px;
-}
-
-h2,h5 {
-	font-weight:normal;
-	color: #64CD0E;
 }
 
 #frame {
@@ -78,16 +131,45 @@ h2,h5 {
 	background: orange;
 }
 
-.rnvtable {
-	font-size: 13px;
-}
-
 .rnvtable td {
+	font-family: 'misoregular';
+	font-size: 27px;
 	padding: 2px 10px;
 	border-bottom: 1px solid #666;
 	color: #64CD0E;
 }
 
-.navbar {
+.navbar{
+	font-size: 25px;
 	margin-bottom: 0px;
+}
+
+.navbar-brand{
+	font-size: 30px;
+}
+
+.graph h4 {
+    text-align: center;
+}
+
+.nograph h4,h5 {
+    text-align: left;
+}
+
+.nograph [class*="col-"] {
+    padding-left:  55px; /* 15px + 40px = 55px */
+}
+
+.row {
+    margin-top: 10px;
+}
+
+#adscreen {
+	position:absolute;
+	top:0px;
+	left:0px;
+	background:#006699;
+	color:#FFFFFF;
+	width:1920px;
+	height:1200px;
 }

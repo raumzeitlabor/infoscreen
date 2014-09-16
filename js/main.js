@@ -1,8 +1,23 @@
 "use strict";
-var graph_source1;
-var graph_source2;
-var graph_source3;
-var graph_source4;
+
+function adScreen()
+{
+	this.adImages = ['splash.png']; // add more images here
+	this.currentAd = 0;
+    this.init = function() {
+    	setInterval(function() {
+    		theAdScreen.showAd();
+    	}, 60*1000);
+    	$('#adscreen').hide();
+	}
+	this.showAd = function(){ 
+		this.currentAdd = (this.currentAd+1)%this.adImages.length;
+		$('#adscreen').css('background-image', 'url("ads/'+this.adImages[this.currentAd]+'")').show();
+    	setTimeout(function(){ $('#adscreen').hide(); }, 5000);
+	}
+}
+
+var theAdScreen = new adScreen();
 
 function updateData() {
 	$.ajax({
@@ -36,15 +51,11 @@ function updateData() {
 }
 
 function updateGraph() {
-	$('#graph1').attr('src', function ( i, val ) { return graph_source1 + "&v=" + new Date().getTime()});
-	$('#graph2').attr('src', function ( i, val ) { return graph_source2 + "&v=" + new Date().getTime()});
-	$('#graph3').attr('src', function ( i, val ) { return graph_source3 + "&v=" + new Date().getTime()});
-	$('#graph4').attr('src', function ( i, val ) { return graph_source4 + "&v=" + new Date().getTime()});
+	get_graphs();
 	setTimeout('updateGraph()',30000);
 }
 
 function updateRnv(){
-	$('.rnvtable').remove();
 	$.ajax({
 		url: "rnv.php"
 	}).done(function(res){
@@ -62,13 +73,15 @@ function updateRnv(){
 		var tbl = $('<table class="rnvtable">')
 		for(var i in abfahrten){
 		    var row = $("<tr>");
+		    $(abfahrten[i]).css('width', '')
 		    row.append(abfahrten[i])
 		    tbl.append(row)
 		}
+		$('.rnvtable').remove();
 		$('#rnvcontent').append(tbl);
 
 	});
-	setTimeout('updateData()',30000);
+	setTimeout('updateRnv()',30000);
 }
 
 function startClock() {
@@ -95,11 +108,7 @@ $(document).ready(function() {
 	startClock()
 	updateData();
 	updateRnv();
-	graph_source1 = $('#graph1').attr('src');
-	graph_source2 = $('#graph2').attr('src');
-	graph_source3 = $('#graph3').attr('src');
-	graph_source4 = $('#graph4').attr('src');
-	setTimeout('updateGraph()',30000);
+	updateGraph();
 	var current = 0;
 	var image_loaded = false;
 	var tumblr_img; tumblr_img = function() {
@@ -154,4 +163,7 @@ $(document).ready(function() {
             }
         });
     }, 1000*60*10);
+
+    theAdScreen.init();
+
 });
