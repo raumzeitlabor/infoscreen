@@ -32,6 +32,17 @@ function updateData() {
 			$("#internet_down").html(data.internet_down);
 			$("#internet_up").html(data.internet_up);
 			$("#payback").html(data.payback);
+
+			// Attempt to set the power icons			
+			for (var i in data.mqtt) {
+				console.log(data.mqtt[i].state);
+				if (data.mqtt[i].state == "on") {
+					$("#mqtt-"+data.mqtt[i].alias).addClass("poweron");
+				} else {
+					$("#mqtt-"+data.mqtt[i].alias).removeClass("poweron");
+				}
+			}
+
 			if (data.door == 1) {
 				$("#door").removeClass('open closed unknown').addClass('open');
 				$("#door").html("Offen");
