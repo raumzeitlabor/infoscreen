@@ -89,6 +89,7 @@ h2,h5{
 h4{
 	margin-top: 0px;
 	margin-bottom: 0px;
+	text-align: left;
 }
 
 #frame {
@@ -164,14 +165,6 @@ h4{
 
 .navbar-brand{
 	font-size: 30px;
-}
-
-.graph h4 {
-    text-align: center;
-}
-
-.nograph h4,h5 {
-    text-align: left;
 }
 
 .nograph [class*="col-"] {
