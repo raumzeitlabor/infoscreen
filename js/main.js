@@ -2,18 +2,21 @@
 
 function adScreen()
 {
+	var adInterval = 5; // Ad Interval in minutes
+	var adDuration = 15; // Ad Interval in seconds
+	
 	this.adImages = ['splash.png']; // add more images here
 	this.currentAd = 0;
     this.init = function() {
     	setInterval(function() {
     		theAdScreen.showAd();
-    	}, 60*1000);
+    	}, 60*1000*adInterval);
     	$('#adscreen').hide();
 	}
 	this.showAd = function(){ 
 		this.currentAdd = (this.currentAd+1)%this.adImages.length;
 		$('#adscreen').css('background-image', 'url("ads/'+this.adImages[this.currentAd]+'")').show();
-    	setTimeout(function(){ $('#adscreen').hide(); }, 5000);
+    	setTimeout(function(){ $('#adscreen').hide(); }, adDuration*1000);
 	}
 }
 
